@@ -58,6 +58,7 @@ int main()
         if(instruction == 2)
         {
             cout << "---Fazer consulta" << endl << endl;
+            // inserir campos para consulta
         };
 
         if(instruction == 3)
