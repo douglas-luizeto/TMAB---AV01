@@ -107,7 +107,6 @@ void entrada(ofstream& outfile)
     outfile << registro_str << endl;
 };
 
-
 void cadastro(ofstream& outfile)
 {
 
