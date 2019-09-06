@@ -1,3 +1,6 @@
+#include <string>
+#include <vector>
+
 #include "ordenar.h"
 
 using namespace std;

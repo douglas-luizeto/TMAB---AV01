@@ -6,13 +6,15 @@
 
 #include "novo_aluno.h"
 #include "carregar_registro.h"
+#include "ordenar.h"
+#include "print_aluno.h"
 
 using namespace std;
 
 int main()
 {   
     int instruction; // opção do menu inicial
-    string line; // raw_input do usuário
+    string line; // raw input do usuário
     string temp; // auxilia na hora de extrair campos de 'line'
 
     while(true)
@@ -44,7 +46,6 @@ int main()
         stringstream inst_linestream(line);
         inst_linestream >> instruction;
 
-        //cin >> instruction;
         cout << endl;
 
         if(instruction == 1)
@@ -79,6 +80,11 @@ int main()
 
             cout << endl;
 
+            // criar lista com parâmetro de ordenação e endereços da tabela
+            vector<order_address> lista_ordem;
+            criar_lista_ordem(&tabela, ordem, &lista_ordem);
+
+
             cout << "Opções de campos (campo de ordenação incluído automaticamente): " << endl;
             cout << "\t* Nome" << endl;
             cout << "\t* DRE" << endl;
@@ -97,11 +103,11 @@ int main()
           
             cout << "Total de aluno cadastrados: " << tabela.size() << endl << endl;
             
-            for(int i=0; i < tabela.size(); i++)
+            for(int i=0; i < lista_ordem.size(); i++)
             {   
-                print_aluno(tabela[i], ordem, campos);
+                print_aluno(lista_ordem[i], ordem, campos);
             } 
-    
+  
         }
 
         if(instruction == 3) break;
