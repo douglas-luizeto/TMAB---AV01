@@ -9,6 +9,7 @@
 #include "ordenar.h"
 #include "print_aluno.h"
 #include "mergesort.h"
+#include "insertsort.h"
 
 using namespace std;
 
@@ -37,7 +38,8 @@ int main()
 
         cout << "1. Cadastrar novo aluno." << endl;
         cout << "2. Listar alunos" << endl;
-        cout << "3. Sair" << endl << endl;
+        cout << "3. Comparar algorítmos de ordenação (mergesort x quicksort)" << endl;
+        cout << "4. Sair" << endl << endl;
 
         cout << "===============================================================" << endl << endl;
 
@@ -89,8 +91,8 @@ int main()
             criar_lista_ordem(&tabela, ordem, &lista_ordem);
 
             // ordenar lista
-            mergesort(ordem, &lista_ordem, 0, lista_ordem.size()-1);
-
+            //mergesort(ordem, &lista_ordem, 0, lista_ordem.size()-1);
+            insertsort(ordem, &lista_ordem);
 
             cout << "Opções de campos (campo de ordenação incluído automaticamente): " << endl;
             cout << "\t* Nome" << endl;
@@ -117,7 +119,12 @@ int main()
   
         }
 
-        if(instruction == 3) break;
+        if(instruction == 3)
+        {
+            // comparar ordenações
+        }
+
+        if(instruction == 4) break;
 
     }
 
