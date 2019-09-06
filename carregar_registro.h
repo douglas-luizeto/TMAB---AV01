@@ -16,7 +16,7 @@ struct TAluno
 
 TAluno string_to_TAluno(std::string aluno_str);
 
-void print_aluno(TAluno aluno);
+void print_aluno(TAluno aluno, std::string ordem, std::string campos);
 
 void carregar_registro(std::ifstream& infile, std::vector<TAluno> *tabela);
 

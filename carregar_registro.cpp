@@ -57,30 +57,36 @@ TAluno string_to_TAluno(string aluno_str)
 }
 
 // passar campos a serem exibidos como argumentos
-void print_aluno(TAluno aluno)
+void print_aluno(TAluno aluno, string ordem, string campos)
 {
     cout << "=============================" << endl << endl;
 
-    cout << "Nome: " << aluno.nome << endl;
-    
-    cout << "CPF: " << aluno.CPF << endl;
-    cout << "DRE: " << aluno.DRE << endl;
-    
-    cout << "Curso: " << aluno.curso << endl;
-    cout << "Período: " << aluno.periodo << endl;
+    if(campos.find("Nome") != string::npos || ordem == "Nome") 
+        cout << "Nome: " << aluno.nome << endl;
 
-    cout << "E-mails: " << endl;
-    for(int j=0; j < aluno.emails.size(); j++)
+    if(campos.find("DRE") != string::npos || ordem == "DRE") 
+        cout << "DRE: " << aluno.DRE << endl;
+    
+    if(campos.find("CPF") != string::npos) cout << "CPF: " << aluno.CPF << endl;
+    
+    if(campos.find("Curso") != string::npos) cout << "Curso: " << aluno.curso << endl;
+   
+    if(campos.find("Periodo") != string::npos) cout << "Periodo: " << aluno.periodo << endl;
+
+    if(campos.find("Emails") != string::npos)
     {
-
-    cout << "\t* " + aluno.emails[j] << endl; 
+        cout << "E-mails: " << endl;
+        for(int j=0; j < aluno.emails.size(); j++) cout << "\t* " + aluno.emails[j] << endl; 
     }
 
-    cout << "Telefones: " << endl;
-    for(int j=0; j < aluno.tels.size(); j++)
+    if(campos.find("Tels") != string::npos)
     {
-    cout << "\t* "; 
-    cout << aluno.tels[j] << endl;
+        cout << "Telefones: " << endl;
+        for(int j=0; j < aluno.tels.size(); j++)
+        {
+            cout << "\t* "; 
+            cout << aluno.tels[j] << endl;
+        }
     }
 
     cout << endl;

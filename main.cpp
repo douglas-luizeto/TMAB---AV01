@@ -1,6 +1,7 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+#include <sstream>
 #include <vector>
 
 #include "novo_aluno.h"
@@ -10,11 +11,13 @@ using namespace std;
 
 int main()
 {   
-    int instruction;
+    int instruction; // opção do menu inicial
+    string line; // raw_input do usuário
+    string temp; // auxilia na hora de extrair campos de 'line'
 
     while(true)
     {
-        // carrega registros a cada iteração
+        // carrega versão mais recente dos registros a cada iteração
         ifstream infile;
         infile.open("registros.txt");
 
@@ -30,14 +33,18 @@ int main()
         cout << "Bem vindo ao FakeSiga! Escolha uma das opções abaixo." << endl << endl;
 
         cout << "1. Cadastrar novo aluno." << endl;
-        cout << "2. Fazer Consulta" << endl;
-        cout << "3. Listar alunos" << endl;
-        cout << "4. Sair" << endl << endl;
+        cout << "2. Listar alunos" << endl;
+        cout << "3. Sair" << endl << endl;
 
         cout << "===============================================================" << endl << endl;
 
         cout << "Digite o número da opção desejada: ";
-        cin >> instruction;
+        
+        getline(cin, line);
+        stringstream inst_linestream(line);
+        inst_linestream >> instruction;
+
+        //cin >> instruction;
         cout << endl;
 
         if(instruction == 1)
@@ -57,23 +64,47 @@ int main()
 
         if(instruction == 2)
         {
-            cout << "---Fazer consulta" << endl << endl;
-            // inserir campos para consulta
-        };
+            string ordem;
+            string campos;
 
-        if(instruction == 3)
-        {
             cout << "---Listar alunos" << endl << endl;
 
+            cout << "Opções para ordenação: " << endl;
+            cout << "\t* Nome (default)" << endl << "\t* DRE" << endl << endl;
+            cout << "Campo para ordenação: " ;
+            
+            getline(cin, line);
+            stringstream ordem_linestream(line);
+            ordem_linestream >> ordem;
+
+            cout << endl;
+
+            cout << "Opções de campos (campo de ordenação incluído automaticamente): " << endl;
+            cout << "\t* Nome" << endl;
+            cout << "\t* DRE" << endl;
+            cout << "\t* CPF" << endl;
+            cout << "\t* Curso" << endl;
+            cout << "\t* Periodo" << endl;
+            cout << "\t* Emails" << endl;
+            cout << "\t* Tels" << endl;
+            cout << "Campos para exibição: "; 
+
+            getline(cin, line);
+            stringstream campos_linestream(line);     
+            while(campos_linestream >> temp) campos += " " + temp;                        
+            
+            cout << endl;
+          
             cout << "Total de aluno cadastrados: " << tabela.size() << endl << endl;
             
             for(int i=0; i < tabela.size(); i++)
             {   
-                print_aluno(tabela[i]);
-            }              
+                print_aluno(tabela[i], ordem, campos);
+            } 
+    
         }
 
-        if(instruction == 4) break;
+        if(instruction == 3) break;
 
     }
 
