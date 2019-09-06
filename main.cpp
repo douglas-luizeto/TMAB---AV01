@@ -85,7 +85,7 @@ int main()
             cout << endl;
 
             // criar lista com parâmetro de ordenação e endereços da tabela
-            vector<order_address> lista_ordem;
+            vector<OrderAddress> lista_ordem;
             criar_lista_ordem(&tabela, ordem, &lista_ordem);
 
             // ordenar lista

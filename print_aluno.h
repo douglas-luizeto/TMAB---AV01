@@ -2,6 +2,7 @@
 
 #include <string>
 
-#include "ordenar.h"
+#include "OrderAddress.h"
 
-void print_aluno(order_address aluno, std::string ordem, std::string campos);
+
+void print_aluno(OrderAddress aluno, std::string ordem, std::string campos);

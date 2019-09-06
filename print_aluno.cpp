@@ -1,9 +1,11 @@
+#include <iostream>
+
 #include "print_aluno.h"
 
 using namespace std;
 
 // modificar para se adequar a lista ordenada
-void print_aluno(order_address aluno, string ordem, string campos)
+void print_aluno(OrderAddress aluno, string ordem, string campos)
 {
     cout << "-----------------------------" << endl << endl;
 

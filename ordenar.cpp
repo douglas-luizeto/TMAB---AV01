@@ -1,10 +1,12 @@
+#include <iostream>
+
 #include "ordenar.h"
 
 using namespace std;
 
-void criar_lista_ordem(vector<TAluno>* tabela, string ordem, vector<order_address>* lista_ordem)
+void criar_lista_ordem(vector<TAluno>* tabela, string ordem, vector<OrderAddress>* lista_ordem)
 {
-    order_address temp; 
+    OrderAddress temp; 
     
     for(int i = 0; i < (*tabela).size(); i++)
     {
@@ -18,15 +20,17 @@ void criar_lista_ordem(vector<TAluno>* tabela, string ordem, vector<order_addres
     }
 }
 
+
 // para fins de depuração
-void print_lista_ordem(vector<order_address> lista_ordem)
+void print_lista_ordem(vector<OrderAddress> lista_ordem)
 {
     for(int i = 0; i < lista_ordem.size(); i++)
     {
-        cout << lista_ordem[i].param_ordem << endl;
+        std::cout << lista_ordem[i].param_ordem << std::endl;
         cout << lista_ordem[i].end_aluno << endl;
     }
 }
+
 
 bool compara_str(string s1, string s2) 
 {

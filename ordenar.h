@@ -3,17 +3,12 @@
 #include <string>
 #include <vector>
 
-#include "carregar_registro.h"
+#include "TAluno.h"
+#include "OrderAddress.h"
 
-struct order_address
-{
-    std::string param_ordem;
-    TAluno* end_aluno;
-};
+void criar_lista_ordem(std::vector<TAluno>* tabela, std::string ordem, std::vector<OrderAddress>* lista_ordem);
 
-void criar_lista_ordem(std::vector<TAluno>* tabela, std::string ordem, std::vector<order_address>* lista_ordem);
-
-void print_lista_ordem(std::vector<order_address> lista_ordem);
+void print_lista_ordem(std::vector<OrderAddress> lista_ordem);
 
 bool compara_str(std::string s1, std::string s2);
 

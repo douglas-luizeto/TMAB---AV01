@@ -12,14 +12,14 @@ using namespace std;
 // primeiro subarray é lista[l..m] 
 // segundo subarray é lista[m+1..r] 
 
-void merge(string ordem, vector<order_address>* lista, int l, int m, int r)
+void merge(string ordem, vector<OrderAddress>* lista, int l, int m, int r)
 {
 	int i, j, k;
 	int n1 = m - l + 1; 
 	int n2 = r - m; 
 
 	// copiar dados para arrays temporários 
-	order_address L[n1], R[n2]; 
+	OrderAddress L[n1], R[n2]; 
 
 	for (i = 0; i < n1; i++) 
 		L[i] = (*lista)[l + i]; 
@@ -65,7 +65,7 @@ void merge(string ordem, vector<order_address>* lista, int l, int m, int r)
 
 // l indica o índice inicial do subarray de lista que deve ser ordenada
 // r indica o índica final
-void mergesort(string ordem, vector<order_address>* lista, int l, int r) 
+void mergesort(string ordem, vector<OrderAddress>* lista, int l, int r) 
 { 
 	if (l < r) 
 	{ 
