@@ -8,6 +8,7 @@
 #include "carregar_registro.h"
 #include "ordenar.h"
 #include "print_aluno.h"
+#include "mergesort.h"
 
 using namespace std;
 
@@ -77,12 +78,18 @@ int main()
             getline(cin, line);
             stringstream ordem_linestream(line);
             ordem_linestream >> ordem;
+            
+            // default = Nome
+            if(ordem != "Nome" && ordem != "DRE") ordem = "Nome";
 
             cout << endl;
 
             // criar lista com parâmetro de ordenação e endereços da tabela
             vector<order_address> lista_ordem;
             criar_lista_ordem(&tabela, ordem, &lista_ordem);
+
+            // ordenar lista
+            mergesort(ordem, &lista_ordem, 0, lista_ordem.size()-1);
 
 
             cout << "Opções de campos (campo de ordenação incluído automaticamente): " << endl;
