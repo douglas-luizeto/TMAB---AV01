@@ -1,5 +1,5 @@
-siga: main.o novo_aluno.o carregar_registro.o print_aluno.o ordenar.o insertsort.o mergesort.o 
-	g++ main.o novo_aluno.o carregar_registro.o print_aluno.o ordenar.o insertsort.o mergesort.o -o siga
+siga: main.o novo_aluno.o carregar_registro.o print_aluno.o ordenar.o insertsort.o mergesort.o comparar_algoritmos.o
+	g++ main.o novo_aluno.o carregar_registro.o print_aluno.o ordenar.o insertsort.o mergesort.o comparar_algoritmos.o -o siga
 
 main.o: main.cpp
 	g++ -c main.cpp 
@@ -21,6 +21,9 @@ insertsort.o: insertsort.cpp
 
 mergesort.o: mergesort.cpp
 	g++ -c mergesort.cpp
+
+comparar_algoritmos.o: comparar_algoritmos.cpp
+	g++ -c comparar_algoritmos.cpp
 
 clean: 
 	rm *.o siga
