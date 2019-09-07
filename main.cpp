@@ -114,7 +114,7 @@ int main()
             vector<OrderAddress> lista_ordem;
             criar_lista_ordem(&tabela, ordem, &lista_ordem);
 
-            // ordenar lista
+            // ordenar lista com mergesort
             mergesort(ordem, &lista_ordem, 0, lista_ordem.size()-1);
 
             cout << "Opções de campos (campo de ordenação incluído automaticamente): " << endl;
@@ -144,8 +144,8 @@ int main()
         if(instruction == 3)
         {
             cout << "---Comparar algorítmos" << endl << endl;
-
             cout << "--------------------------------" << endl << endl;
+            
             // comparar ordenações (desordenada)
             cout << "Tabela desordenada" << endl << endl;
             comparar_algoritmos("Nome", &tabela);
@@ -163,7 +163,6 @@ int main()
             cout << "--------------------------------" << endl << endl;
 
             // com tabela totalmente ordenada
-
             tabela2.clear();
             infile2.open("./assets/registros_ord.txt");
             carregar_registro(infile2, &tabela2);

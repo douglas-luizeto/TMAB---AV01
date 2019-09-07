@@ -8,6 +8,7 @@
 
 using namespace std;
 
+// converte uma string gravada na formatação certa em uma instância de TAluno
 TAluno string_to_TAluno(string aluno_str)
 {
     TAluno aluno;

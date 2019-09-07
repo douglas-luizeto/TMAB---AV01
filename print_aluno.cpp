@@ -4,7 +4,6 @@
 
 using namespace std;
 
-// modificar para se adequar a lista ordenada
 void print_aluno(OrderAddress aluno, string ordem, string campos, int index)
 {
     cout << "-----------------------------" << endl;

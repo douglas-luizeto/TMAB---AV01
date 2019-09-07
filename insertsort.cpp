@@ -8,28 +8,35 @@ https://www.geeksforgeeks.org/merge-sort/
 
 using namespace std; 
   
-/* Function to sort an array using insertion sort*/
 void insertsort(string ordem, vector<OrderAddress> *lista)  
 {  
     int n = (*lista).size();
 
-    int i, j;
-    OrderAddress key;
+    int i, j;  // indices para manipular a lista
+    OrderAddress pivot; // pivô
 
     for (i = 1; i < n; i++) 
     {  
-        key = (*lista)[i];  
+        // primeiro pivô é o segundo elemento da lista
+        pivot = (*lista)[i];  
+        // que será comparado com o primeiro elemento
         j = i - 1;  
   
-        /* Move elements of arr[0..i-1], that are  
-        greater than key, to one position ahead  
-        of their current position */
-        while (j >= 0 && compara(ordem, key.param_ordem, (*lista)[j].param_ordem)) 
+        /* 
+        move os elementos de lista[0..i-1] maiores  
+        que o pivo uma posição a frente da atual 
+        */
+        while (j >= 0 && compara(ordem, pivot.param_ordem, (*lista)[j].param_ordem)) 
         {  
             (*lista)[j + 1] = (*lista)[j];  
             j = j - 1;  
-        }  
-        (*lista)[j + 1] = key;  
+        }
+        /* 
+        quando encontramos um elemento menor 
+        que o pivô, este assume a posição logo
+        após este elemento
+        */  
+        (*lista)[j + 1] = pivot;  
     }  
 }  
   

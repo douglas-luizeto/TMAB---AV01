@@ -114,8 +114,7 @@ void cadastro(ofstream& outfile)
 
     do
     {
-        //gambiarra para evitar loops infinitos quando há erros nas entradas
-        resposta_aluno = 'n'; 
+        resposta_aluno = 'n'; // para evitar loops infinitos quando há erros nas entradas
 
         entrada(outfile);
 

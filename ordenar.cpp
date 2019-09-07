@@ -4,6 +4,11 @@
 
 using namespace std;
 
+
+/* 
+cria a partir da tabela um vetor onde cada coordenada contem uma chave (Nome ou DRE)
+e um endereço para um registro completo
+*/
 void criar_lista_ordem(vector<TAluno>* tabela, string ordem, vector<OrderAddress>* lista_ordem)
 {
     OrderAddress temp; 
@@ -31,7 +36,7 @@ void print_lista_ordem(vector<OrderAddress> lista_ordem)
     }
 }
 
-
+// função de comparação caso usemos "Nome" como chave
 bool compara_str(string s1, string s2) 
 {
 	int i = 0;
@@ -41,6 +46,7 @@ bool compara_str(string s1, string s2)
 	return tolower(s1[i]) <= tolower(s2[i]); 
 }
 
+// função de comparação caso usemos "DRE" como chave
 bool compara_int(string s1, string s2)
 {
 	int n1 = stoul(s1);
