@@ -30,6 +30,7 @@ TAluno string_to_TAluno(string aluno_str)
         else if(i == 1) aluno.curso = aluno_str.substr(inicio_campo, final_campo - inicio_campo);
 
         else if(i == 2) aluno.periodo = stoi(aluno_str.substr(inicio_campo, final_campo - inicio_campo));
+
     } 
 
 
@@ -61,7 +62,7 @@ void carregar_registro(ifstream& infile, vector<TAluno>* tabela)
     string aluno_str;
 
     while(infile >> aluno_str)
-    {   
+    {       
         (*tabela).push_back(string_to_TAluno(aluno_str));
     }
 }

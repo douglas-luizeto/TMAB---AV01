@@ -1,35 +1,15 @@
-/*===================================================================================
-
-Tópicos em Matemática Aplicada B - AV01
-Prof: Milton R. Ramirez 
-
-Programadores: 
-    
-    Bianca Oliveira Bresciani de Carvalho
-    DRE: 116169279
-    
-    Douglas Luizeto
-    DRE: 112030355
-
-===================================================================================*/
-
 #include <iostream>
 #include <fstream>
 #include <string>
 #include <sstream>
 #include <vector>
 
-//estruturas de dados
-#include "TAluno.h"
-#include "OrderAddress.h"
-
 #include "novo_aluno.h"
 #include "carregar_registro.h"
-#include "print_aluno.h"
 #include "ordenar.h"
+#include "print_aluno.h"
 #include "mergesort.h"
 #include "insertsort.h"
-#include "comparar_algoritmos.h"
 
 using namespace std;
 
@@ -111,7 +91,8 @@ int main()
             criar_lista_ordem(&tabela, ordem, &lista_ordem);
 
             // ordenar lista
-            mergesort(ordem, &lista_ordem, 0, lista_ordem.size()-1);
+            //mergesort(ordem, &lista_ordem, 0, lista_ordem.size()-1);
+            insertsort(ordem, &lista_ordem);
 
             cout << "Opções de campos (campo de ordenação incluído automaticamente): " << endl;
             cout << "\t* Nome" << endl;
@@ -141,7 +122,6 @@ int main()
         if(instruction == 3)
         {
             // comparar ordenações
-            comparar_algoritmos("Nome", &tabela);            
         }
 
         if(instruction == 4) break;
