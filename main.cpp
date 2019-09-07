@@ -137,14 +137,41 @@ int main()
             
             for(int i=0; i < lista_ordem.size(); i++)
             {   
-                print_aluno(lista_ordem[i], ordem, campos);
+               print_aluno(lista_ordem[i], ordem, campos, i);
             } 
         }
 
         if(instruction == 3)
         {
-            // comparar ordenações
-            comparar_algoritmos("Nome", &tabela);   
+            cout << "---Comparar algorítmos" << endl << endl;
+
+            cout << "--------------------------------" << endl << endl;
+            // comparar ordenações (desordenada)
+            cout << "Tabela desordenada" << endl << endl;
+            comparar_algoritmos("Nome", &tabela);
+            cout << "--------------------------------" << endl << endl;
+
+            // agora com tabela parcialmente ordenada
+            ifstream infile2;
+            infile2.open("./assets/registros_parc.txt");
+            vector<TAluno> tabela2;
+            carregar_registro(infile2, &tabela2);
+            infile2.close();  
+
+            cout << "Tabela parcialmente ordenada" << endl << endl;
+            comparar_algoritmos("Nome", &tabela2);
+            cout << "--------------------------------" << endl << endl;
+
+            // com tabela totalmente ordenada
+
+            tabela2.clear();
+            infile2.open("./assets/registros_ord.txt");
+            carregar_registro(infile2, &tabela2);
+            infile2.close();
+
+            cout << "Tabela totalmente ordenada" << endl << endl;
+            comparar_algoritmos("Nome", &tabela2);
+            cout << "--------------------------------" << endl << endl;
         }
 
         if(instruction == 4) break;

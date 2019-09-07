@@ -1,4 +1,5 @@
 #include "comparar_algoritmos.h"
+#include <iomanip>
 
 using namespace std;
 
@@ -26,6 +27,10 @@ void comparar_algoritmos(std::string ordem, std::vector<TAluno>* tabela_end)
     total_insert = (clock() - start)/ (double) CLOCKS_PER_SEC;
 
     cout << "Tamanho da lista: " << lista_ordem.size() << endl;
-    cout << "Tempo mergesort: " << total_merge << " s" << endl;
-    cout << "Tempo insertsort: " << total_insert << " s" << endl;
+    cout << "Tempo mergesort : " << total_merge << " s" << endl;
+    cout << "Tempo insertsort: " << total_insert << " s" << endl << endl;
+
+    cout << setprecision(3);
+    cout << "mergesort = " << total_merge/total_insert << " x insertsort" << endl << endl; 
+
 }

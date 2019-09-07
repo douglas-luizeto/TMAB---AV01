@@ -5,9 +5,11 @@
 using namespace std;
 
 // modificar para se adequar a lista ordenada
-void print_aluno(OrderAddress aluno, string ordem, string campos)
+void print_aluno(OrderAddress aluno, string ordem, string campos, int index)
 {
-    cout << "-----------------------------" << endl << endl;
+    cout << "-----------------------------" << endl;
+
+    cout << index + 1 << '.' << endl << endl;
 
     if(campos.find("Nome") != string::npos || ordem == "Nome") 
         cout << "Nome: " << (*aluno.end_aluno).nome << endl;
