@@ -64,11 +64,11 @@ int main()
         cout << "===============================================================" << endl << endl;
 
         cout << "Digite o número da opção desejada: ";
-        
+      
         getline(cin, line);
-        stringstream inst_linestream(line);
-        inst_linestream >> instruction;
-
+        stringstream linestream(line);
+        linestream >> instruction;
+     
         cout << endl;
 
         if(instruction == 1)
@@ -84,6 +84,10 @@ int main()
             
             // fechar aquivo
             outfile.close();
+
+            // limpar buffer cin
+            getline(cin, line);
+
         };
 
         if(instruction == 2)
@@ -135,13 +139,12 @@ int main()
             {   
                 print_aluno(lista_ordem[i], ordem, campos);
             } 
-  
         }
 
         if(instruction == 3)
         {
             // comparar ordenações
-            comparar_algoritmos("Nome", &tabela);            
+            comparar_algoritmos("Nome", &tabela);   
         }
 
         if(instruction == 4) break;

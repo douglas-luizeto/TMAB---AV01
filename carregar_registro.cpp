@@ -26,7 +26,6 @@ TAluno string_to_TAluno(string aluno_str)
 
         if(i == 0) aluno.nome = aluno_str.substr(inicio_campo, final_campo - inicio_campo);
 
-
         else if(i == 1) aluno.curso = aluno_str.substr(inicio_campo, final_campo - inicio_campo);
 
         else if(i == 2) aluno.periodo = stoi(aluno_str.substr(inicio_campo, final_campo - inicio_campo));
